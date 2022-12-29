@@ -1,7 +1,10 @@
 import 'package:fire/screens/email_pass_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../Widget/Authbuttons.dart';
+import 'PhoneAuthScreen.dart';
+import 'google_signin_screen.dart';
 
 class AuthScreen extends StatelessWidget {
   const AuthScreen({Key? key}) : super(key: key);
@@ -24,11 +27,27 @@ class AuthScreen extends StatelessWidget {
               ),
               AuthBotton(
                 iconData: Icons.email,
-                title: 'Email/Password',
+                title: ' Email',
                 ontap: (){
                   Navigator.of(context).push(MaterialPageRoute(builder: (_)=> const EmailPassScreen() ));
                 } ,
-              )
+              ),
+              AuthBotton(
+                iconData: Icons.phone_android_rounded,
+                title: ' Mobile',
+                ontap: (){
+                  Navigator.of(context).push(MaterialPageRoute(builder: (_)=> const PhoneAuthScreen() ));
+                } ,
+              ),
+              AuthBotton(
+                iconData: FontAwesomeIcons.google,
+                title: ' Google',
+                ontap: (){
+                  Navigator.of(context).push(MaterialPageRoute(builder: (_)=> const googleSignInScreen() ));
+                } ,
+              ),
+
+
             ],
           ),
         ),
